@@ -2,7 +2,17 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { sortSalesData } from '../utils/saleHelpers';
 
-const RetailSale: React.FC = ({ sales }) => {
+type SaleType = {
+  weekEnding: string;
+  retailSales: number;
+  wholesaleSales: number;
+};
+
+type SalesProps = {
+  sales: SaleType[];
+};
+
+const RetailSale: React.FC<SalesProps> = ({ sales }) => {
   const chartRef = useRef();
 
   const sortedMonthlySales = sortSalesData(sales);

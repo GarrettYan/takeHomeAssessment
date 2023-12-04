@@ -1,6 +1,18 @@
 import React from 'react';
 
-const ProductInfo: React.FC = ({ image, title, subtitle, tags }) => {
+interface ProductInfoProps {
+  image: string; // Adjust the type if your image is not a string URL
+  title: string;
+  subtitle: string;
+  tags: string[]; // Assuming tags is an array of strings
+}
+
+const ProductInfo: React.FC<ProductInfoProps> = ({
+  image,
+  title,
+  subtitle,
+  tags,
+}) => {
   return (
     <div className='product-info'>
       <img src={image} alt={title} />

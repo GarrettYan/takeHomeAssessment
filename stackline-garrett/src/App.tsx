@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProductData } from './features/productDataSlice';
+import { AppDispatch } from './app/store';
 
 import './App.css';
 import ProductInfo from './components/ProductInfo';
@@ -9,8 +10,8 @@ import Metrics from './components/Metrics';
 import Header from './components/Header';
 
 function App() {
-  const dispatch = useDispatch();
-  const productInfo = useSelector((state) => state.productData.product);
+  const dispatch = useDispatch<AppDispatch>();
+  const productInfo = useSelector((state: any) => state.productData.product);
   console.log('test', productInfo);
 
   useEffect(() => {

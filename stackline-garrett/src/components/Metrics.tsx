@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { formatter, requestSort } from '../utils/tableHelpers';
 
 const Metrics = ({ sales }) => {
