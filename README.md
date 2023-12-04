@@ -6,7 +6,7 @@ git clone https://github.com/GarrettYan/takeHomeAssessment.git
 
 cd takeHomeAssessment
 
-cd stackline
+cd stackline-garrett
 
 npm install
 
