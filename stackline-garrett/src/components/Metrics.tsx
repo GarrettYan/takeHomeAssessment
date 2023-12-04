@@ -1,38 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { formatter, requestSort } from '../utils/tableHelpers';
 
 const Metrics = ({ sales }) => {
   const [sortedSales, setSortedSales] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    maximumFractionDigits: 0,
-  });
-
-  const requestSort = (key) => {
-    let direction = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
-    setSortConfig({ key, direction });
-
-    const sortedData = [...sales].sort((a, b) => {
-      if (a[key] < b[key]) {
-        return direction === 'asc' ? -1 : 1;
-      }
-      if (a[key] > b[key]) {
-        return direction === 'asc' ? 1 : -1;
-      }
-      return 0;
-    });
-
-    setSortedSales(sortedData);
-  };
+  const handleSort = requestSort(
+    sales,
+    sortConfig,
+    setSortedSales,
+    setSortConfig
+  );
 
   const getHeader = (key, label) => {
     return (
-      <th onClick={() => requestSort(key)}>
+      <th onClick={() => handleSort(key)}>
         {label}
         {sortConfig.key === key
           ? sortConfig.direction === 'asc'
