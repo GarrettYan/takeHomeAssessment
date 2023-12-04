@@ -5,7 +5,7 @@ import { sortSalesData } from '../utils/saleHelpers';
 type SaleType = {
   weekEnding: string;
   retailSales: number;
-  wholesaleSales: number;
+  retailerMargin: number;
 };
 
 type SalesProps = {
