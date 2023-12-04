@@ -1,4 +1,3 @@
-// Header.tsx
 import React from 'react';
 
 const ProductInfo: React.FC = ({ image, title, subtitle, tags }) => {
