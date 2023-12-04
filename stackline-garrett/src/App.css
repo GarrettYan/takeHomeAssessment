@@ -97,3 +97,40 @@ width: auto;
   margin: auto;
   height: 400px; 
 }
+.metrics {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.metrics table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.metrics thead {
+  background-color: #f8f8f8;
+}
+
+.metrics th,
+.metrics td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.metrics th {
+  color: #333333;
+  font-weight: 600;
+}
+
+.metrics td {
+  color: #666666;
+}
+
+.metrics tr:last-child td {
+  border-bottom: none;
+}
