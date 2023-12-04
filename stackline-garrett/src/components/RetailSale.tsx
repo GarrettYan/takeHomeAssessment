@@ -1,41 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import { sortSalesData } from '../utils/saleHelpers';
 
 const RetailSale: React.FC = ({ sales }) => {
   const chartRef = useRef();
 
-  function sortSalesData(salesData) {
-    const monthOrder = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ];
-
-    const salesByMonth = salesData.reduce((acc, sale) => {
-      const month = new Date(sale.weekEnding).toLocaleString('default', {
-        month: 'short',
-      });
-      if (!acc[month]) {
-        acc[month] = { month, retailSales: 0, retailerMargin: 0 };
-      }
-      acc[month].retailSales += sale.retailSales;
-      acc[month].retailerMargin += sale.retailerMargin;
-      return acc;
-    }, {});
-
-    return Object.values(salesByMonth).sort(
-      (a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month)
-    );
-  }
   const sortedMonthlySales = sortSalesData(sales);
 
   const renderChart = (salesData) => {
