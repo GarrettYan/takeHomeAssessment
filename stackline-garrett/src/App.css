@@ -1,10 +1,10 @@
-.container1{
+.appContainer{
   display: flex;
   flex-direction: column;
   background-color:#f6f8fa
 }
 
-.container2{
+.contentContainer{
   display: flex;
 
 }

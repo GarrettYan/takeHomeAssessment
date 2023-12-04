@@ -18,9 +18,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className='container1'>
+    <div className='appContainer'>
       <Header />
-      <div className='container2'>
+      <div className='contentContainer'>
         <ProductInfo
           image={productInfo.image}
           title={productInfo.title}
